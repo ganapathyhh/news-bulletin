@@ -1,0 +1,13 @@
+<section fxFlexFill>
+  <app-topbar (sideNavToggle)="sidenav.toggle()"></app-topbar>
+  <mat-drawer-container>
+    <mat-drawer #sidenav role="navigation" mode="over">
+      <app-sidenav-menu (setTheme)="setTheme($event)"></app-sidenav-menu>
+    </mat-drawer>
+    <mat-drawer-content>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</section>

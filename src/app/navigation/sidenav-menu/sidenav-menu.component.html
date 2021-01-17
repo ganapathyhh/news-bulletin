@@ -1,0 +1,41 @@
+<mat-list fxFlex fxLayout="column">
+  <span matSubheader>Activities</span>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <a routerLink="/preferences">
+      <mat-icon>favorite</mat-icon>
+      <span>Liked</span>
+    </a>
+  </mat-list-item>
+  <mat-list-item>
+    <a routerLink="/preferences">
+      <mat-icon>folder_shared</mat-icon>
+      <span>Shared</span>
+    </a>
+  </mat-list-item>
+  <mat-list-item>
+    <a routerLink="/preferences">
+      <mat-icon>save</mat-icon>
+      <span>Saved</span>
+    </a>
+  </mat-list-item>
+  <mat-list-item>
+    <a routerLink="/preferences">
+      <mat-icon>comment_bank</mat-icon>
+      <span>Commented</span>
+    </a>
+  </mat-list-item>
+  <span matSubheader>Application</span>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <a routerLink="/preferences">
+      <mat-icon>settings</mat-icon>
+      <span>Preferences</span>
+    </a>
+  </mat-list-item>
+  <mat-list-item>
+    <mat-slide-toggle (change)="changeTheme($event)">
+        <span>Dark theme</span>
+    </mat-slide-toggle>
+    </mat-list-item>
+</mat-list>

@@ -1,0 +1,31 @@
+.mat-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: auto;
+
+  .mat-icon {
+    width: 3rem;
+  }
+
+  a {
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    align-content: space-around;
+    color: inherit;
+  }
+
+  &:hover {
+    background: rgba(225, 225, 225, 0.5);
+  }
+  
+}
+
+.mat-subheader {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.8rem;
+    padding-bottom: 0;
+}
