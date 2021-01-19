@@ -1,0 +1,62 @@
+<!-- Login Component -->
+<section fxFlexFill>
+    <section fxFlex="column" fxLayoutAlign="center center">
+      <mat-card fxFlex="90" fxFlex.gt-sm="25" class="mat-elevation-z20">
+        <mat-card-header fxLayoutAlign="center">
+          <mat-card-title>Sign in Form</mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <!-- Login Form Card body -->
+        <mat-card-content [style.margin-top.px]="10">
+          <form [formGroup]="loginForm" (ngSubmit)="loginNow()">
+            <!-- Email -->
+            <div>
+            <mat-form-field appearance="outline" fxFlex="grow">
+                <mat-label>Email</mat-label>
+                <mat-icon matPrefix>email</mat-icon>
+                <input matInput formControlName="email" placeholder="ex. name@gmail.com" type="email" required>
+              <mat-error *ngIf="(l.email.touched || formSubmitted) && l.email.errors?.required" class="error">
+                  Email is required
+              </mat-error>
+              <mat-error *ngIf="(l.email.touched || formSubmitted) && l.email.errors?.email" class="error">
+                Email is invalid
+              </mat-error>
+            </mat-form-field>
+            </div>
+            <!-- Password -->
+            <div>
+            <mat-form-field appearance="outline" fxFlex="grow">
+              <mat-label>Password</mat-label>
+              <mat-icon matPrefix>vpn_key</mat-icon>
+                <input matInput  formControlName="password" placeholder="******" type="password" required>  
+              <mat-error *ngIf="(l.password.touched || formSubmitted) && l.password.errors?.required" class="error">
+                Password is required
+              </mat-error>
+            </mat-form-field>
+            </div>
+            <!-- Remember -->
+            <div>
+                <mat-checkbox type="checkbox" class="custom-control-input">
+                  <span>Remember</span>
+                </mat-checkbox>
+            </div>
+            <!-- Forgot password -->
+            <div [style.margin-top.px]="10">
+              <a routerLink="/auth/reset-pass">Forgot password</a>
+            </div>
+            <mat-divider></mat-divider>
+            <div [style.margin-top.px]="20">
+              <button fxFlex="grow" mat-raised-button color="primary" type="submit" title="Login">Login</button>
+            </div>
+          </form>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <!-- Login Card footer -->
+        <mat-card-actions fxLayoutAlign="center">
+          <span>Don't have an account?</span>&nbsp;
+          <a routerLink="/auth/register">Sign up</a>
+        </mat-card-actions>
+      </mat-card>
+    </section>
+  </section>
+  

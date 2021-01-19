@@ -8,8 +8,8 @@ import { SidenavMenuComponent } from './sidenav-menu/sidenav-menu.component';
 
 @NgModule({
   declarations: [
-    TopbarComponent, 
-    FooterComponent, 
+    TopbarComponent,
+    FooterComponent,
     SidenavMenuComponent
   ],
   imports: [

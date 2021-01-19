@@ -8,15 +8,12 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class SidenavMenuComponent implements OnInit {
   @Output() setTheme = new EventEmitter<boolean>();
 
-  constructor() { 
-    
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  changeTheme(event: any) {
-  
+  changeTheme(event: any): void {
     this.setTheme.emit(event.checked);
   }
 }

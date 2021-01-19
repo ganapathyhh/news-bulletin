@@ -7,8 +7,15 @@ const routes: Routes = [
     loadChildren: () =>
       import('./news-bulletin/news-bulletin.module').then(
         (newsModule) => newsModule.NewsBulletinModule
-      ),
+      )
   },
+  {
+    path: 'auth',
+    loadChildren: () => 
+      import('./auth/auth.module').then(
+        (authModule) => (authModule.AuthModule)
+      )
+  }
 ];
 
 @NgModule({

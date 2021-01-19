@@ -1,12 +1,16 @@
 <mat-toolbar color="primary" class="sticky-top mat-elevation-z4" fxFlex fxLayout="column">
     <mat-toolbar-row fxFlex fxLayout="row">
-        <button mat-icon-button (click)="onToggleSidenav()">
+        <!-- Menu toggle -->
+        <button mat-icon-button (click)="onToggleSidenav()" matTooltip="Sidebar toggler">
             <mat-icon>menu</mat-icon>
         </button>
-        <a routerLink="/" mat-flat-button color="primary">
+        <!-- Logo -->
+        <a routerLink="/" mat-flat-button color="primary" matTooltip="App title">
             <h2>News Bulletin</h2>
         </a>
+        <!-- Right menu -->
         <div fxFlex fxLayout fxLayoutAlign="flex-end">
+            <!-- View options -->
             <button mat-icon-button>
                 <ng-container *ngIf="isViewList">
                     <mat-icon matTooltip="View as Grid" >view_module</mat-icon>
@@ -15,12 +19,30 @@
                     <mat-icon matTooltip="View as List" >view_stream</mat-icon>
                 </ng-container>
             </button>
+            <!-- User account options -->
+            <button mat-button fxFlexOffset="1" [matMenuTriggerFor]="accOptions" matTooltip="User Options">
+                <mat-icon>person</mat-icon>
+                <mat-icon>arrow_drop_down</mat-icon>
+            </button>
+            <!-- Extra options -->
             <button mat-icon-button fxFlexOffset="1" [matMenuTriggerFor]="extras" matTooltip="More actions">
                 <mat-icon>more_vert</mat-icon>
             </button>
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
+<!-- Account options menu -->
+<mat-menu #accOptions="matMenu">
+    <button mat-menu-item>
+        <mat-icon>login</mat-icon>
+        <span>Login</span>
+    </button>
+    <button mat-menu-item>
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+    </button>
+</mat-menu>
+<!-- Extra options menu -->
 <mat-menu #extras="matMenu">
     <button mat-menu-item>
         <mat-icon>info</mat-icon>

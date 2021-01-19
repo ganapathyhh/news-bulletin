@@ -1,7 +1,6 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { AfterViewInit, Component, HostBinding, OnInit, ViewChild } from '@angular/core';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,15 +8,15 @@ import { AfterViewInit, Component, HostBinding, OnInit, ViewChild } from '@angul
 })
 export class HomeComponent implements OnInit {
   @HostBinding('class') componentCssClass: string;
-  
+
   constructor(private overlayContainer: OverlayContainer) {
     this.componentCssClass = '';
   }
 
   ngOnInit(): void {}
 
-  setTheme(event: any) {
-    if(event == true) {
+  setTheme(event: any): void {
+    if (event === true) {
       this.overlayContainer.getContainerElement().classList.add('dark-theme');
       this.componentCssClass = 'dark-theme';
     } else {
